@@ -15,7 +15,7 @@ var bio ={
 		"location":"Nabha, Punjab",
 		"blog":"pradhumanrehal.blog"
 	},
-	"skills":["Awesomeness","HTML","css","programming","JS"],
+	"skills":["Awesomeness","HTML","CSS","JavaScript"],
 	"display":function(){
 		var formattedName=HTMLheaderName.replace("%data%",bio.name);
 		var formattedRole=HTMLheaderRole.replace("%data%",bio.role);
@@ -50,7 +50,6 @@ var bio ={
 			$("#skills").append(formattedSkills);
 			var formattedSkills=HTMLskills.replace("%data%",bio.skills[3]);
 			$("#skills").append(formattedSkills);
-
 		}
 	}
 };

@@ -219,3 +219,16 @@ span {
     display: block;
   }
 }
+
+@media only screen and (min-width: 360px) and (max-width:749px) {
+  #skills {
+    text-align: center;
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width:500px) {
+  #topContacts {
+    display: none;
+  }
+}
