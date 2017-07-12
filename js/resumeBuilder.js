@@ -8,9 +8,9 @@ var bio ={
 	"biopic":"images/me.jpg",
 	"welcomeMessage":"Hello there!",
 	"contacts":{
-		"mobile":"9041619702",
+		"mobile":"90416XXXXX",
 		"twitter":"@Pradhumanrehal",
-		"email":"pradhuman.rehal@coolmail.com",
+		"email":"pradhuman.rehal@Xmail.com",
 		"github":"Pradhumanrehal",
 		"location":"Nabha, Punjab",
 		"blog":"pradhumanrehal.blog"
@@ -28,14 +28,15 @@ var bio ={
 		.append(formattedPic);
 
 	   
-			var formattedMobile=HTMLmobile.replace("%data%",bio.contacts.mobile);
-			var formattedTwitter=HTMLtwitter.replace("%data%",bio.contacts.twitter);
-			var formattedEmail=HTMLemail.replace("%data%",bio.contacts.email);
-			var formattedGithub=HTMLgithub.replace("%data%",bio.contacts.github);
-			var formattedLocation=HTMLlocation.replace("%data%",bio.contacts.location);
-			var formattedBlog=HTMLblog.replace("%data%",bio.contacts.blog);
+		var formattedMobile=HTMLmobile.replace("%data%",bio.contacts.mobile);
+		var formattedTwitter=HTMLtwitter.replace("%data%",bio.contacts.twitter);
+		var formattedEmail=HTMLemail.replace("%data%",bio.contacts.email);
+		var formattedGithub=HTMLgithub.replace("%data%",bio.contacts.github);
+		var formattedLocation=HTMLlocation.replace("%data%",bio.contacts.location);
+		var formattedBlog=HTMLblog.replace("%data%",bio.contacts.blog);
 
-			$("#topContacts").append(formattedMobile,formattedTwitter,formattedEmail,formattedGithub,formattedLocation,formattedBlog);
+		$("#topContacts").append(formattedMobile,formattedTwitter,formattedEmail,formattedGithub,formattedLocation,formattedBlog);
+		$("#footerContacts").append(formattedMobile,formattedTwitter,formattedEmail);
 
 		//to check skills
 
@@ -76,14 +77,14 @@ var work={
 
 	"display":function(){
 		$("#workExperience").append(HTMLworkStart);
-		for(var job in work.jobs){
-		var formattedjobEmployer=HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
-		var formattedjobTitle=HTMLworkTitle.replace("%data%",work.jobs[job].title);
-		var formattedjobTimeline=HTMLworkDates.replace("%data%",work.jobs[job].dates);
-		var formattedjobDescription=HTMLworkDescription.replace("%data%",work.jobs[job].description);
-		var formattedjobLocation=HTMLworkLocation.replace("%data%",work.jobs[job].location)
-		$(".work-entry:last").append(formattedjobEmployer,formattedjobTitle,formattedjobTimeline,formattedjobDescription,formattedjobLocation);
-		}
+		work.jobs.forEach(function(jobs){		
+			var formattedjobEmployer=HTMLworkEmployer.replace("%data%", jobs.employer);
+			var formattedjobTitle=HTMLworkTitle.replace("%data%", jobs.title);
+			var formattedjobTimeline=HTMLworkDates.replace("%data%", jobs.dates);
+			var formattedjobDescription=HTMLworkDescription.replace("%data%", jobs.description);
+			var formattedjobLocation=HTMLworkLocation.replace("%data%", jobs.location)
+			$(".work-entry:last").append(formattedjobEmployer,formattedjobTitle,formattedjobTimeline,formattedjobDescription,formattedjobLocation);
+		});
 	}
 };
 
@@ -118,14 +119,14 @@ var education={
 
 	"display":function() {
 		$("#education").append(HTMLschoolStart);
-		for(school in education.schools) {		
-			var formattedName = HTMLschoolName.replace("%data%",education.schools[school].name);
-			var formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
-			var formattedDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
-			var formattedLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
-			var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[school].major);
+		education.schools.forEach(function(school) {		
+			var formattedName = HTMLschoolName.replace("%data%", school.name);
+			var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
+			var formattedDates = HTMLschoolDates.replace("%data%", school.dates);
+			var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
+			var formattedMajor = HTMLschoolMajor.replace("%data%", school.major);
 			$(".education-entry:last").append(formattedName + formattedDegree,formattedDates,formattedLocation,formattedMajor);
-		}
+		});
 	}
 };
 
@@ -149,15 +150,14 @@ var projects ={
 
 	"display":function(){
 		$("#projects").append(HTMLprojectStart);
-		for(var i in this.projects){
-			var project=this.projects[i];		
+		projects.projects.forEach(function(project){		
 			$(".project-entry:last")
 			.append(HTMLprojectTitle.replace("%data%", project.title) )
 			.append(HTMLprojectDates.replace("%data%", project.dates) )
 			.append(HTMLprojectDescription.replace("%data%", project.description) )
 			.append(HTMLprojectImage.replace("%data%", project.image) );
 			
-		}				
+		});				
 	}
 };
 
