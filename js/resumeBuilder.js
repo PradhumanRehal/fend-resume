@@ -36,7 +36,7 @@ var bio ={
 		var formattedBlog=HTMLblog.replace("%data%",bio.contacts.blog);
 
 		$("#topContacts").append(formattedMobile,formattedTwitter,formattedEmail,formattedGithub,formattedLocation,formattedBlog);
-		$("#footerContacts").append(formattedMobile,formattedTwitter,formattedEmail);
+		$("#footerContacts").append(formattedMobile,formattedTwitter,formattedEmail,formattedGithub);
 
 		//to check skills
 
@@ -44,11 +44,11 @@ var bio ={
 			$("#header").append(HTMLskillsStart);
 			var formattedSkills=HTMLskills.replace("%data%",bio.skills[0]);
 			$("#skills").append(formattedSkills);
-			var formattedSkills=HTMLskills.replace("%data%",bio.skills[1]);
+			formattedSkills=HTMLskills.replace("%data%",bio.skills[1]);
 			$("#skills").append(formattedSkills);
-			var formattedSkills=HTMLskills.replace("%data%",bio.skills[2]);
+			formattedSkills=HTMLskills.replace("%data%",bio.skills[2]);
 			$("#skills").append(formattedSkills);
-			var formattedSkills=HTMLskills.replace("%data%",bio.skills[3]);
+			formattedSkills=HTMLskills.replace("%data%",bio.skills[3]);
 			$("#skills").append(formattedSkills);
 		}
 	}
@@ -81,7 +81,7 @@ var work={
 			var formattedjobTitle=HTMLworkTitle.replace("%data%", jobs.title);
 			var formattedjobTimeline=HTMLworkDates.replace("%data%", jobs.dates);
 			var formattedjobDescription=HTMLworkDescription.replace("%data%", jobs.description);
-			var formattedjobLocation=HTMLworkLocation.replace("%data%", jobs.location)
+			var formattedjobLocation=HTMLworkLocation.replace("%data%", jobs.location);
 			$(".work-entry:last").append(formattedjobEmployer,formattedjobTitle,formattedjobTimeline,formattedjobDescription,formattedjobLocation);
 		});
 	}
@@ -171,7 +171,7 @@ var inName=function(){
 	x[0]=x[0].slice(0,1).toUpperCase()+x[0].slice(1).toLowerCase();
 	x=x.join(" ");
 	return x;
-}
+};
 
 //-----------------function-calls---------------- 
 

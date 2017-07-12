@@ -105,7 +105,7 @@ Start here! initializeMap() is called when page is loaded.
 */
 function initializeMap() {
 
-  var locations
+  var locations;
 
   var mapOptions = {
     disableDefaultUI: true
